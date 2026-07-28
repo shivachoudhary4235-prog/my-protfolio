@@ -20,22 +20,14 @@ const FEATURES = [
 
 export function ProjectBuilder() {
   const [industryName, setIndustryName] = useState<string>("");
-  const [selectedFeatures, setSelectedFeatures] = useState<string[]>(["Online Booking System", "Mobile-First Design"]);
+  const [featuresText, setFeaturesText] = useState<string>("");
   const [name, setName] = useState("");
   const [businessName, setBusinessName] = useState("");
   const [referenceLink, setReferenceLink] = useState("");
 
-  const toggleFeature = (feature: string) => {
-    if (selectedFeatures.includes(feature)) {
-      setSelectedFeatures(selectedFeatures.filter(f => f !== feature));
-    } else {
-      setSelectedFeatures([...selectedFeatures, feature]);
-    }
-  };
-
   const generateWhatsAppLink = () => {
     const finalIndustry = industryName.trim() || "business";
-    const featuresList = selectedFeatures.length > 0 ? selectedFeatures.join(", ") : "a standard high-converting website";
+    const featuresList = featuresText.trim() || "a standard high-converting website";
     
     const clientName = name.trim() || "[Your Name]";
     const clientBusiness = businessName.trim() || "[Your Business]";
@@ -82,31 +74,13 @@ export function ProjectBuilder() {
         {/* Step 2: Features */}
         <div className="mb-12">
           <h3 className="text-xl font-semibold text-white mb-6">2. What features do you need?</h3>
-          <div className="flex flex-wrap gap-3">
-            {FEATURES.map((feature) => {
-              const isSelected = selectedFeatures.includes(feature);
-              return (
-                <button
-                  key={feature}
-                  onClick={() => toggleFeature(feature)}
-                  className={cn(
-                    "flex items-center px-5 py-3 rounded-full border text-left transition-all duration-300",
-                    isSelected 
-                      ? "bg-white/10 border-white/30 text-white" 
-                      : "bg-white/5 border-white/5 text-text-muted hover:bg-white/10"
-                  )}
-                >
-                  <div className={cn(
-                    "flex-shrink-0 w-5 h-5 rounded-full border flex items-center justify-center mr-3 transition-colors",
-                    isSelected ? "bg-primary border-primary" : "border-text-muted"
-                  )}>
-                    {isSelected && <CheckCircle weight="bold" size={12} className="text-white" />}
-                  </div>
-                  <span className="text-sm font-medium leading-tight">{feature}</span>
-                </button>
-              );
-            })}
-          </div>
+          <textarea
+            value={featuresText}
+            onChange={(e) => setFeaturesText(e.target.value)}
+            placeholder="e.g., Online Booking, E-Commerce, Blog, Contact Form..."
+            rows={3}
+            className="w-full bg-[#0F0D1A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+          />
         </div>
 
         {/* Step 3: Contact */}
