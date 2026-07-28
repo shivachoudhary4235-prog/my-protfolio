@@ -2,18 +2,10 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Tooth, Barbell, ForkKnife, ShoppingCart, Laptop, CheckCircle, WhatsappLogo } from "@phosphor-icons/react";
+import { CheckCircle, WhatsappLogo } from "@phosphor-icons/react";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-
-const INDUSTRIES = [
-  { id: "dental", name: "Dental Clinic", icon: Tooth },
-  { id: "gym", name: "Gym / Fitness", icon: Barbell },
-  { id: "restaurant", name: "Restaurant", icon: ForkKnife },
-  { id: "ecommerce", name: "E-Commerce", icon: ShoppingCart },
-  { id: "other", name: "Other", icon: Laptop },
-];
 
 const FEATURES = [
   "Online Booking System",
@@ -27,7 +19,7 @@ const FEATURES = [
 ];
 
 export function ProjectBuilder() {
-  const [selectedIndustry, setSelectedIndustry] = useState<string>("dental");
+  const [industryName, setIndustryName] = useState<string>("");
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>(["Online Booking System", "Mobile-First Design"]);
   const [name, setName] = useState("");
   const [businessName, setBusinessName] = useState("");
@@ -42,14 +34,14 @@ export function ProjectBuilder() {
   };
 
   const generateWhatsAppLink = () => {
-    const industryName = INDUSTRIES.find(i => i.id === selectedIndustry)?.name || "business";
+    const finalIndustry = industryName.trim() || "business";
     const featuresList = selectedFeatures.length > 0 ? selectedFeatures.join(", ") : "a standard high-converting website";
     
     const clientName = name.trim() || "[Your Name]";
     const clientBusiness = businessName.trim() || "[Your Business]";
     const clientReference = referenceLink.trim() ? `\nReference / Inspiration: ${referenceLink.trim()}` : "";
     
-    const text = `Hi Shiva, I'm interested in a new website for my *${industryName}*.\n\nI need these features:\n- ${featuresList}\n${clientReference}\n\nMy name is *${clientName}* from *${clientBusiness}*. Let's discuss a quote!\n\n_(Automated inquiry from your website)_`;
+    const text = `Hi Shiva, I'm interested in a new website for my *${finalIndustry}*.\n\nI need these features:\n- ${featuresList}\n${clientReference}\n\nMy name is *${clientName}* from *${clientBusiness}*. Let's discuss a quote!\n\n_(Automated inquiry from your website)_`;
     
     return `https://wa.me/919619442009?text=${encodeURIComponent(text)}`;
   };
@@ -78,34 +70,13 @@ export function ProjectBuilder() {
         {/* Step 1: Industry */}
         <div className="mb-12">
           <h3 className="text-xl font-semibold text-white mb-6">1. What's your industry?</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {INDUSTRIES.map((industry) => {
-              const isSelected = selectedIndustry === industry.id;
-              const Icon = industry.icon;
-              return (
-                <button
-                  key={industry.id}
-                  onClick={() => setSelectedIndustry(industry.id)}
-                  className={cn(
-                    "flex flex-col items-center justify-center p-6 rounded-2xl border transition-all duration-300 group",
-                    isSelected 
-                      ? "bg-primary/10 border-primary text-white shadow-[0_0_30px_rgba(255,87,34,0.15)]" 
-                      : "bg-white/5 border-white/10 text-text-muted hover:bg-white/10 hover:border-white/20"
-                  )}
-                >
-                  <Icon 
-                    weight={isSelected ? "fill" : "light"} 
-                    size={32} 
-                    className={cn(
-                      "mb-3 transition-colors", 
-                      isSelected ? "text-primary" : "group-hover:text-white"
-                    )} 
-                  />
-                  <span className="text-sm font-medium">{industry.name}</span>
-                </button>
-              );
-            })}
-          </div>
+          <input 
+            type="text" 
+            value={industryName}
+            onChange={(e) => setIndustryName(e.target.value)}
+            placeholder="e.g., Dental Clinic, Gym, Real Estate, E-Commerce..."
+            className="w-full md:w-1/2 bg-[#0F0D1A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+          />
         </div>
 
         {/* Step 2: Features */}
