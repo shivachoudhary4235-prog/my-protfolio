@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, WhatsappLogo } from "@phosphor-icons/react";
-import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -58,7 +57,7 @@ export function ProjectBuilder() {
         </p>
       </motion.div>
 
-      <Card className="p-6 md:p-10">
+      <div className="w-full">
         {/* Step 1: Industry */}
         <div className="mb-12">
           <h3 className="text-xl font-semibold text-white mb-6">1. What's your industry?</h3>
@@ -137,7 +136,7 @@ export function ProjectBuilder() {
             <span className="absolute -inset-1 rounded-full bg-success opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
           </a>
         </div>
-      </Card>
+      </div>
     </section>
   );
 }

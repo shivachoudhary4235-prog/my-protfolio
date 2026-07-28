@@ -29,12 +29,12 @@ export function Footer() {
   return (
     <footer id="contact" className="relative w-full pt-32 pb-12 px-4 md:px-8 bg-dark border-t border-white/5">
       {/* Massive Typography Background */}
-      <div className="absolute top-0 left-0 w-full overflow-hidden flex justify-center pointer-events-none select-none opacity-5">
-        <span className="text-[15vw] font-black tracking-tighter whitespace-nowrap">VIBEFORGE</span>
+      <div className="absolute inset-0 w-full h-full overflow-hidden flex items-center justify-center pointer-events-none select-none opacity-5 z-0">
+        <span className="text-[15vw] font-black tracking-tighter whitespace-nowrap leading-none">VIBEFORGE</span>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
