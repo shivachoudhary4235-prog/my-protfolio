@@ -82,7 +82,7 @@ export function ProjectBuilder() {
         {/* Step 2: Features */}
         <div className="mb-12">
           <h3 className="text-xl font-semibold text-white mb-6">2. What features do you need?</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <div className="flex flex-wrap gap-3">
             {FEATURES.map((feature) => {
               const isSelected = selectedFeatures.includes(feature);
               return (
@@ -90,7 +90,7 @@ export function ProjectBuilder() {
                   key={feature}
                   onClick={() => toggleFeature(feature)}
                   className={cn(
-                    "flex items-center p-4 rounded-xl border text-left transition-all duration-300",
+                    "flex items-center px-5 py-3 rounded-full border text-left transition-all duration-300",
                     isSelected 
                       ? "bg-white/10 border-white/30 text-white" 
                       : "bg-white/5 border-white/5 text-text-muted hover:bg-white/10"
