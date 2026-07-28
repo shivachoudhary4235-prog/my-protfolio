@@ -65,14 +65,6 @@ export default function RootLayout({
       <head>
         <link href="https://db.onlinewebfonts.com/c/d08bafd725a4cfc309efb5a88e0b63a5?family=basis33" rel="stylesheet" />
         
-        {/* Google Analytics Placeholder */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-radial-mesh min-h-screen selection:bg-primary/30 selection:text-white`}
