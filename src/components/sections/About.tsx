@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { ArrowUpRight } from "@phosphor-icons/react";
+import Link from "next/link";
 
 export function About() {
   return (
@@ -67,13 +68,20 @@ export function About() {
             </p>
           </div>
 
-          <Button 
-            variant="glass" 
-            className="w-max" 
-            icon={<ArrowUpRight weight="light" size={16} />}
+          <a 
+            href={`https://wa.me/919619442009?text=${encodeURIComponent("Hi Shiva, I'd like to build my website with VibeForge.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-max"
           >
-            Let's build yours
-          </Button>
+            <Button 
+              variant="glass" 
+              className="w-full" 
+              icon={<ArrowUpRight weight="light" size={16} />}
+            >
+              Let's build yours
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>

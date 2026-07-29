@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import Link from "next/link";
 
 export async function Portfolio() {
   const items = await getPortfolioItems();
@@ -21,9 +22,11 @@ export async function Portfolio() {
             Click any to explore the live site.
           </p>
         </div>
-        <Button variant="outline" icon={<ArrowRight weight="light" size={16} />}>
-          View All Projects
-        </Button>
+        <Link href="/projects">
+          <Button variant="outline" icon={<ArrowRight weight="light" size={16} />}>
+            View All Projects
+          </Button>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

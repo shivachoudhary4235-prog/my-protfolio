@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
 import { CheckCircle } from "@phosphor-icons/react";
+import Link from "next/link";
 
 const pricingTiers = [
   {
@@ -87,7 +88,7 @@ export function Pricing() {
             <Card glow={tier.highlight} className="h-full flex flex-col">
               <div className="p-8 flex flex-col h-full relative">
                 {tier.badge && (
-                  <div className="absolute top-0 right-8 -translate-y-1/2">
+                  <div className="absolute top-6 right-6">
                     <span className="inline-flex items-center rounded-full bg-primary/20 backdrop-blur-md border border-primary/30 px-3 py-1 text-xs font-bold text-primary shadow-[0_0_20px_rgba(249,115,22,0.3)]">
                       {tier.badge}
                     </span>
@@ -111,12 +112,19 @@ export function Pricing() {
                   ))}
                 </ul>
                 
-                <Button 
-                  variant={tier.highlight ? "primary" : "glass"} 
+                <a 
+                  href={`https://wa.me/919619442009?text=${encodeURIComponent(`Hi Shiva, I'm interested in the ${tier.name} package (${tier.price}) for my business.\n\nI'm looking forward to getting these features:\n${tier.features.map((f) => `- ${f}`).join('\n')}\n\nCan we discuss further?`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full mt-auto"
                 >
-                  {tier.cta}
-                </Button>
+                  <Button 
+                    variant={tier.highlight ? "primary" : "glass"} 
+                    className="w-full"
+                  >
+                    {tier.cta}
+                  </Button>
+                </a>
               </div>
             </Card>
           </motion.div>

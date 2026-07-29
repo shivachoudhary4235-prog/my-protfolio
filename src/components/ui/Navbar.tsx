@@ -57,7 +57,11 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <a href="tel:+919619442009">
+          <a 
+            href={`https://wa.me/919619442009?text=${encodeURIComponent("Hi Shiva, I'd like to discuss building a custom website with VibeForge.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button
               variant="primary"
               className="py-2 px-4 text-sm"
@@ -125,7 +129,12 @@ export function Navbar() {
             )}
             style={{ transitionDelay: `${navLinks.length * 100 + 100}ms` }}
           >
-            <a href="tel:+919619442009">
+            <a 
+              href={`https://wa.me/919619442009?text=${encodeURIComponent("Hi Shiva, I'd like to discuss building a custom website with VibeForge.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+            >
               <Button variant="primary" icon={<ArrowUpRight weight="light" size={16} />}>
                 Let's Talk
               </Button>
