@@ -44,6 +44,13 @@ export const metadata: Metadata = {
     title: "VibeForge Cloud | Premium Web Design Agency",
     description: "Professional custom web design and development for businesses in the USA, Canada, UK and globally.",
   },
+  icons: {
+    icon: [
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 import { QuoteModal } from "@/components/ui/QuoteModal";
