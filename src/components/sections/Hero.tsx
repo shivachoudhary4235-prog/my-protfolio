@@ -27,12 +27,19 @@ export function Hero() {
         </div>
               
         <div className="flex justify-center"> 
-          <a href="/build" className="inline-block">
+          <a href="/build" className="inline-block" onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('open-quote-modal')); }}>
             <LiquidButton className="text-white font-bold tracking-wide" size="xl">
               Build My Website
             </LiquidButton> 
           </a>
         </div> 
+        
+        <div className="flex items-center gap-2 mt-6 justify-center">
+          <div className="flex text-yellow-400">{"★".repeat(5)}</div>
+          <span className="text-sm text-gray-300 font-medium">
+            5.0 Rating • Trusted by 15+ Businesses Worldwide
+          </span>
+        </div>
       </div>
     </section>
   );

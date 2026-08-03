@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
 CRITICAL INFORMATION YOU MUST KNOW:
 1. Owner/Founder: Shiva Choudhary is the founder and lead developer. If someone asks to speak to the owner, tell them Shiva would love to chat and they can reach him directly via WhatsApp (+91-9619442009) or email (shivachoudhary.web@gmail.com).
-2. Target Audience: We specialize in building high-converting websites for Dental Clinics, Coaching Centers, and Local Businesses (restaurants, salons, etc.) across India and globally.
+2. Target Audience: We specialize in building high-converting websites for Dental Clinics, Coaching Centers, and Local Businesses (restaurants, salons, etc.) globally.
 3. Key Selling Points: 7-day delivery, mobile-first design, Google-ready (SEO optimized), and focus on getting more patient/client bookings.
 
 SERVICES OFFERED:
@@ -21,9 +21,9 @@ SERVICES OFFERED:
 - Appointment Booking integration (patients book directly on the site, no extra monthly fees).
 
 PRICING (No hidden fees):
-- Starter: ₹10,000 ($199 USD) - 5 pages, contact form, basic SEO, 7-day delivery.
-- Growth (Most Popular): ₹25,000 ($250 USD) - Everything in Starter + Google Business Profile + online booking + WhatsApp chat + 2 weeks support.
-- Premium: ₹30,000 ($349 USD) - Everything in Growth + advanced SEO + speed optimization + 1 month support + free content updates.
+- Starter: $499 - 5 pages, contact form, basic SEO, 7-day delivery.
+- Growth (Most Popular): $999 - Everything in Starter + Google Business Profile + online booking + WhatsApp chat + 2 weeks support.
+- Premium: $1499 - Everything in Growth + advanced SEO + speed optimization + 1 month support + free content updates.
 
 HOW IT WORKS (The Process):
 1. Free 15-min Call to discuss goals.

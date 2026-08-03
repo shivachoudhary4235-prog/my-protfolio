@@ -3,12 +3,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/Card";
-import { ChartLineUp, Users, CurrencyInr } from "@phosphor-icons/react";
+import { ChartLineUp, Users, CurrencyDollar } from "@phosphor-icons/react";
 
 export function ROICalculator() {
   const [visitors, setVisitors] = useState(1000);
   const [conversionRate, setConversionRate] = useState(2); // New VibeForge rate
-  const [aov, setAov] = useState(2500); // Average Order Value in INR
+  const [aov, setAov] = useState(250); // Average Order Value in USD
 
   const oldConversionRate = 0.5; // Average bad website conversion rate
   
@@ -58,10 +58,10 @@ export function ROICalculator() {
               <div>
                 <div className="flex justify-between mb-4">
                   <label className="text-white/80 font-medium flex items-center gap-2">
-                    <CurrencyInr className="text-primary" size={20} />
+                    <CurrencyDollar className="text-primary" size={20} />
                     Average Customer Value
                   </label>
-                  <span className="text-white font-bold">₹{aov.toLocaleString()}</span>
+                  <span className="text-white font-bold">${aov.toLocaleString()}</span>
                 </div>
                 <input 
                   type="range" 
@@ -101,18 +101,18 @@ export function ROICalculator() {
             <div className="flex flex-col justify-center bg-white/5 rounded-2xl p-8 border border-white/10 text-center">
               <h3 className="text-lg text-white/60 mb-2">Estimated Extra Revenue</h3>
               <div className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-light mb-4">
-                ₹{Math.round(extraRevenue).toLocaleString()}
+                ${Math.round(extraRevenue).toLocaleString()}
               </div>
               <p className="text-white/40 text-sm mb-8">per month</p>
               
               <div className="pt-6 border-t border-white/10 flex justify-between text-sm">
                 <div className="flex flex-col items-center">
                   <span className="text-white/40 mb-1">Old Revenue</span>
-                  <span className="text-white/80 font-mono">₹{Math.round(oldRevenue).toLocaleString()}</span>
+                  <span className="text-white/80 font-mono">${Math.round(oldRevenue).toLocaleString()}</span>
                 </div>
                 <div className="flex flex-col items-center">
                   <span className="text-white/40 mb-1">New Revenue</span>
-                  <span className="text-success font-mono font-bold">₹{Math.round(newRevenue).toLocaleString()}</span>
+                  <span className="text-success font-mono font-bold">${Math.round(newRevenue).toLocaleString()}</span>
                 </div>
               </div>
             </div>

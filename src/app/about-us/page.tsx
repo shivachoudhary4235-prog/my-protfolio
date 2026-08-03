@@ -34,7 +34,7 @@ export default function AboutUs() {
             VibeForge Cloud was founded with a single mission: to help local businesses bridge the gap between their exceptional real-world services and their digital presence.
           </p>
           <p className="text-lg text-text-muted font-light">
-            We believe that high-quality, high-converting web design shouldn't be restricted to massive tech companies. Whether you are a local restaurant in India or a growing dental clinic in the USA, we build scalable, mobile-first websites that turn visitors into loyal customers.
+            We believe that high-quality, high-converting web design shouldn't be restricted to massive tech companies. Whether you are a local restaurant in the UK or a growing dental clinic in the USA, we build scalable, mobile-first websites that turn visitors into loyal customers.
           </p>
         </div>
       </div>

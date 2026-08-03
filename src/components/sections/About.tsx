@@ -58,7 +58,7 @@ export function About() {
           
           <div className="space-y-6 text-lg text-text-muted font-light leading-relaxed mb-10">
             <p>
-              Hi, I'm Shiva. I started VibeForge Cloud because I noticed too many local businesses in India struggling with slow, outdated websites that actively drive customers away. 
+              Hi, I'm Shiva. I started VibeForge Cloud because I noticed too many local businesses globally struggling with slow, outdated websites that actively drive customers away. 
             </p>
             <p>
               My goal is simple: to provide dental clinics, coaching centers, and premium local businesses with <span className="text-white font-medium">Awwwards-tier web experiences</span> that establish instant trust and convert visitors into loyal clients.

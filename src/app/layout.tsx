@@ -21,20 +21,20 @@ export const metadata: Metadata = {
 
   manifest: '/site.webmanifest',
   keywords: [
-    "web design agency USA", "affordable web developer Canada", "custom website design India",
+    "web design agency USA", "professional web developer Canada", "custom website design agency",
     "high converting websites for local business", "dental clinic website design",
     "restaurant web design services", "freelance web developer USA", "SaaS website designer",
-    "coaching center website", "cheap web design Canada", "Shopify developer India",
+    "coaching center website", "high-converting web design Canada", "global Shopify developer",
     "Next.js web development agency", "fast website loading times", "Google Maps SEO setup",
     "local business SEO USA", "online booking system website", "modern web design 2026",
-    "hire web developer USA", "outsource web design India to USA", "web design packages small business"
+    "hire web developer USA", "outsource web design globally", "web design packages small business"
   ],
   authors: [{ name: "Shiva Choudhary", url: "https://vibeforge.cloud" }],
   creator: "Shiva Choudhary",
   publisher: "VibeForge Cloud",
   openGraph: {
     title: "VibeForge Cloud | Custom Web Design for Local Businesses",
-    description: "Transform your online presence with a high-performance website. Built for conversions. Delivering globally to USA, Canada, and India.",
+    description: "Transform your online presence with a high-performance website. Built for conversions. Delivering globally.",
     url: "https://vibeforge.cloud",
     siteName: "VibeForge Cloud",
     type: "website",
@@ -42,9 +42,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "VibeForge Cloud | Premium Web Design Agency",
-    description: "Affordable custom web design and development for businesses in the USA, Canada, and India.",
+    description: "Professional custom web design and development for businesses in the USA, Canada, UK and globally.",
   },
 };
+
+import { QuoteModal } from "@/components/ui/QuoteModal";
 
 export default function RootLayout({
   children,
@@ -78,6 +80,7 @@ export default function RootLayout({
         <SmoothScroll>
           {children}
         </SmoothScroll>
+        <QuoteModal />
         <ChatBot />
       </body>
     </html>

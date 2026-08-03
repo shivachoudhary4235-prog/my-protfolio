@@ -2,14 +2,14 @@ export function SEOContent() {
   return (
     <section className="w-full py-16 px-4 md:px-8 max-w-7xl mx-auto border-t border-white/5 opacity-50 hover:opacity-100 transition-opacity duration-500">
       <div className="prose prose-invert prose-sm md:prose-base max-w-none text-text-muted">
-        <h2>Premium Web Design Agency for Local Businesses in the USA, Canada, and India</h2>
+        <h2>Premium Web Design Agency for Local Businesses in the USA, Canada, and UK</h2>
         <p>
-          Welcome to VibeForge Cloud, the premier web design agency dedicated to building high-converting, mobile-first websites for local businesses, dental clinics, restaurants, and SaaS companies across the USA, Canada, UK, and India. In today's highly competitive digital landscape, simply having a website is no longer enough. You need an online presence that acts as a 24/7 sales engine. Whether you are searching for an affordable web developer in Canada, a top-tier Shopify developer in India, or a custom website design agency in the USA, our team provides unparalleled digital solutions tailored to your unique business needs.
+          Welcome to VibeForge Cloud, the premier web design agency dedicated to building high-converting, mobile-first websites for local businesses, dental clinics, restaurants, and SaaS companies across the USA, Canada, UK, and Europe. In today's highly competitive digital landscape, simply having a website is no longer enough. You need an online presence that acts as a 24/7 sales engine. Whether you are searching for a professional web developer in Canada, a top-tier Shopify developer globally, or a custom website design agency in the USA, our team provides unparalleled digital solutions tailored to your unique business needs.
         </p>
         
         <h3>Why Choose VibeForge for Your Custom Website Design?</h3>
         <p>
-          We specialize in affordable custom web design without compromising on quality or performance. We understand that local businesses—from cozy cafes to expanding dental clinics—require fast website loading times, seamless user experiences, and robust local SEO setups to capture organic traffic. When you hire a freelance web developer in the USA or outsource web design from India to the USA, you often face communication hurdles and delayed timelines. VibeForge bridges that gap by offering a streamlined, transparent process that guarantees a professional 5-page website delivery in just 7 days.
+          We specialize in high-converting custom web design without compromising on quality or performance. We understand that local businesses—from cozy cafes to expanding dental clinics—require fast website loading times, seamless user experiences, and robust local SEO setups to capture organic traffic. When you hire a freelance web developer in the USA or outsource web design globally, you often face communication hurdles and delayed timelines. VibeForge bridges that gap by offering a streamlined, transparent process that guarantees a professional 5-page website delivery in just 7 days.
         </p>
 
         <h3>High-Converting Websites for Specific Industries</h3>
@@ -22,9 +22,9 @@ export function SEOContent() {
           The digital ecosystem is evolving rapidly. We leverage the absolute latest in web technologies, including React, Next.js, and advanced WebGL shaders, to deliver modern web design in 2026. This means your website isn't just a static digital brochure; it's a dynamic, lightning-fast application. We implement robust, high-performance architectures that guarantee lightning-fast load times—a critical factor for both user retention and Google search rankings. By prioritizing a mobile-first design approach, we ensure that the majority of your traffic (which comes from smartphones) experiences a flawless, intuitive interface. 
         </p>
 
-        <h3>Affordable Web Design Packages for Small Businesses</h3>
+        <h3>High-converting Web Design Packages for Small Businesses</h3>
         <p>
-          Cost should never be a barrier to incredible digital growth. We offer transparent, cheap web design in Canada and affordable web design packages for small businesses globally. Unlike predatory agencies, we do not lock you into exorbitant, hidden monthly maintenance fees. Once your custom website is launched, you own it completely. We optionally provide priority support, advanced local business SEO in the USA, and continuous performance monitoring to ensure your investment continues to generate ROI month over month. 
+          Quality should never be compromised. We offer transparent, professional web design in Canada and high-converting web design packages for small businesses globally. Unlike predatory agencies, we do not lock you into exorbitant, hidden monthly maintenance fees. Once your custom website is launched, you own it completely. We optionally provide priority support, advanced local business SEO in the USA, and continuous performance monitoring to ensure your investment continues to generate ROI month over month. 
         </p>
 
         <h3>The Ultimate Online Booking System Website</h3>

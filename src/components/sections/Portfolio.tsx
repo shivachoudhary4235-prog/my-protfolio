@@ -67,9 +67,9 @@ export async function Portfolio() {
                     href={item.demoUrl} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10 text-white transition-all duration-500 hover:bg-primary hover:text-white hover:-rotate-12"
+                    className="text-primary hover:text-primary-light text-sm font-medium flex items-center gap-1 transition-colors"
                   >
-                    <ArrowUpRight weight="light" size={18} />
+                    View Live Site &rarr;
                   </a>
                 </div>
               </div>

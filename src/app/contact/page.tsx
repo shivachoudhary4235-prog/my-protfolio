@@ -30,7 +30,7 @@ export default function Contact() {
           <div className="flex flex-col items-center text-center p-8 rounded-2xl bg-white/5 border border-white/10">
             <MapPin size={40} className="text-white/60 mb-4" />
             <h3 className="text-xl font-bold text-white mb-2">Location</h3>
-            <p className="text-sm text-text-muted">Serving clients globally from India</p>
+            <p className="text-sm text-text-muted">Serving clients globally</p>
           </div>
         </div>
       </div>

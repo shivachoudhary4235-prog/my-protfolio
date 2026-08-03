@@ -23,9 +23,9 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <IntegrationMarquee />
+      <About />
       <Services />
       <Portfolio />
-      <About />
       <Process />
       <ROICalculator />
       <Pricing />

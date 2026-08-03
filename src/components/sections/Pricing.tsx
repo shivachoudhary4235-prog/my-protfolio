@@ -9,8 +9,7 @@ import Link from "next/link";
 const pricingTiers = [
   {
     name: "Starter",
-    price: "₹10,000",
-    usdPrice: "$199",
+    price: "$499",
     description: "Perfect for new local businesses needing a professional online presence.",
     features: [
       "5-page mobile-friendly website",
@@ -24,8 +23,7 @@ const pricingTiers = [
   {
     name: "Growth",
     badge: "Most Popular",
-    price: "₹25,000",
-    usdPrice: "$250",
+    price: "$999",
     description: "The complete package to attract and convert more local customers.",
     features: [
       "Everything in Starter",
@@ -39,8 +37,7 @@ const pricingTiers = [
   },
   {
     name: "Premium",
-    price: "₹30,000",
-    usdPrice: "$349",
+    price: "$1,499",
     description: "For established businesses wanting aggressive growth and zero hassle.",
     features: [
       "Everything in Growth",
@@ -100,7 +97,7 @@ export function Pricing() {
                 
                 <div className="mb-8 flex items-baseline gap-2">
                   <span className="text-4xl lg:text-5xl font-bold text-white tracking-tighter">{tier.price}</span>
-                  <span className="text-text-muted font-medium">/{tier.usdPrice}</span>
+                  <span className="text-text-muted font-medium">/one-time</span>
                 </div>
                 
                 <ul className="flex flex-col gap-4 mb-10 flex-1">
@@ -112,23 +109,28 @@ export function Pricing() {
                   ))}
                 </ul>
                 
-                <a 
-                  href={`https://wa.me/919619442009?text=${encodeURIComponent(`Hi Shiva, I'm interested in the ${tier.name} package (${tier.price}) for my business.\n\nI'm looking forward to getting these features:\n${tier.features.map((f) => `- ${f}`).join('\n')}\n\nCan we discuss further?`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full mt-auto"
-                >
+                <div className="w-full mt-auto">
                   <Button 
                     variant={tier.highlight ? "primary" : "glass"} 
                     className="w-full"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.dispatchEvent(new CustomEvent('open-quote-modal', { detail: { plan: tier.name } }));
+                    }}
                   >
                     {tier.cta}
                   </Button>
-                </a>
+                </div>
               </div>
             </Card>
           </motion.div>
         ))}
+      </div>
+
+      <div className="mt-12 text-center">
+        <p className="text-sm text-text-muted font-light">
+          All prices in USD. Payments accepted via Stripe, PayPal, and Wise.
+        </p>
       </div>
     </section>
   );

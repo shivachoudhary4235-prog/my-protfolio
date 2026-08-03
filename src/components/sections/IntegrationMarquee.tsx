@@ -18,6 +18,9 @@ const technologies = [
   "Mobile First",
   "Vercel",
   "Stripe",
+  "PayPal",
+  "Wise",
+  "Razorpay",
   "Figma",
 ];
 

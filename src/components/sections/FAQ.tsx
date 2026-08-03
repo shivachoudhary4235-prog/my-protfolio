@@ -6,6 +6,14 @@ import { Plus, Minus } from "@phosphor-icons/react";
 
 const faqs = [
   {
+    question: "Do you work with international clients?",
+    answer: "Yes. I build websites for businesses across the US, Canada, UK, and Europe. All communication happens via Zoom, Slack, or WhatsApp — whatever fits your timezone."
+  },
+  {
+    question: "What currency do you charge in?",
+    answer: "All prices are listed in USD. I accept payments via Stripe, PayPal, and Wise for secure international transactions."
+  },
+  {
     question: "Do you charge any hidden monthly maintenance fees?",
     answer: "No! Unlike many agencies, we don't hold your website hostage with mandatory monthly fees. You own your website completely. We only charge a monthly fee if you actively choose to hire us for ongoing SEO, priority support, and regular content updates (included in the Premium package)."
   },

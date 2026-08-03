@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Lightning, CheckCircle, WhatsappLogo } from "@phosphor-icons/react";
+import { X, CheckCircle, WhatsappLogo, CaretDown } from "@phosphor-icons/react";
 import { cn } from "@/lib/utils";
 
 const FEATURES = [
@@ -25,6 +25,18 @@ export function QuoteModal() {
   const [goal, setGoal] = useState("");
   const [addons, setAddons] = useState("");
   const [selectedFeatures, setSelectedFeatures] = useState<string[]>([]);
+  const [selectedPackage, setSelectedPackage] = useState<string>("Growth");
+
+  useEffect(() => {
+    const handleOpen = (e: any) => {
+      setIsOpen(true);
+      if (e.detail?.plan) {
+        setSelectedPackage(e.detail.plan);
+      }
+    };
+    window.addEventListener('open-quote-modal', handleOpen);
+    return () => window.removeEventListener('open-quote-modal', handleOpen);
+  }, []);
 
   const toggleFeature = (f: string) => {
     if (selectedFeatures.includes(f)) setSelectedFeatures(selectedFeatures.filter(x => x !== f));
@@ -32,7 +44,7 @@ export function QuoteModal() {
   };
 
   const handleWhatsAppSubmit = () => {
-    const text = `Hi Shiva, I want to build a website.\n\n*Name:* ${name || "N/A"}\n*Email:* ${email || "N/A"}\n*WhatsApp:* ${phone || "N/A"}\n*Business Type:* ${business || "N/A"}\n\n*Goal:*\n${goal || "N/A"}\n\n*Features Needed:*\n${selectedFeatures.length > 0 ? selectedFeatures.join(", ") : "None specified"}\n\n*Additional Add-ons:*\n${addons || "N/A"}\n\n_(Automated inquiry from website panel)_`;
+    const text = `Hi Shiva, I want to build a website.\n\n*Name:* ${name || "N/A"}\n*Email:* ${email || "N/A"}\n*WhatsApp:* ${phone || "N/A"}\n*Business Type:* ${business || "N/A"}\n*Selected Package:* ${selectedPackage}\n\n*Goal:*\n${goal || "N/A"}\n\n*Features Needed:*\n${selectedFeatures.length > 0 ? selectedFeatures.join(", ") : "None specified"}\n\n*Additional Add-ons:*\n${addons || "N/A"}\n\n_(Automated inquiry from website panel)_`;
     
     window.open(`https://wa.me/919619442009?text=${encodeURIComponent(text)}`, "_blank");
     setIsOpen(false);
@@ -43,14 +55,14 @@ export function QuoteModal() {
       {/* Floating Action Button */}
       <motion.button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-4 md:bottom-8 md:right-8 z-[90] group flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-4 text-sm font-bold text-white shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] active:scale-[0.98] transition-all"
+        className="fixed bottom-6 right-6 z-[90] group flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 px-6 py-4 text-sm font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:shadow-[0_0_30px_rgba(249,115,22,0.6)] active:scale-[0.98] transition-all"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1 }}
       >
-        <Lightning weight="fill" size={20} />
+        <WhatsappLogo weight="fill" size={20} />
         Build My Website
-        <span className="absolute -inset-1 rounded-full bg-blue-600 opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
+        <span className="absolute -inset-1 rounded-full bg-orange-500 opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
       </motion.button>
 
       {/* Slide-over Panel */}
@@ -113,9 +125,24 @@ export function QuoteModal() {
                 {/* Project Details */}
                 <div className="flex flex-col gap-4">
                   <h3 className="text-lg font-semibold text-white/90 border-b border-white/5 pb-2">2. Project Details</h3>
+                  <div className="flex flex-col gap-1.5 relative">
+                    <label className="text-xs text-text-muted font-medium ml-2">Selected Package</label>
+                    <div className="relative">
+                      <select 
+                        value={selectedPackage} 
+                        onChange={e => setSelectedPackage(e.target.value)} 
+                        className="w-full h-12 rounded-xl bg-white/5 px-4 text-white text-sm outline-none ring-1 ring-white/10 focus:ring-orange-500 transition-all appearance-none"
+                      >
+                        <option value="Starter" className="bg-[#0a0a0a]">Starter ($499)</option>
+                        <option value="Growth" className="bg-[#0a0a0a]">Growth ($999)</option>
+                        <option value="Premium" className="bg-[#0a0a0a]">Premium ($1,499)</option>
+                      </select>
+                      <CaretDown className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 pointer-events-none" size={16} />
+                    </div>
+                  </div>
                   <div className="flex flex-col gap-1.5">
                     <label className="text-xs text-text-muted font-medium ml-2">What is your goal for this website?</label>
-                    <textarea value={goal} onChange={e => setGoal(e.target.value)} className="h-24 rounded-xl bg-white/5 p-4 text-white text-sm outline-none ring-1 ring-white/10 focus:ring-blue-500 transition-all resize-none placeholder:text-white/20" placeholder="Get more leads, build brand trust..." />
+                    <textarea value={goal} onChange={e => setGoal(e.target.value)} className="h-24 rounded-xl bg-white/5 p-4 text-white text-sm outline-none ring-1 ring-white/10 focus:ring-orange-500 transition-all resize-none placeholder:text-white/20" placeholder="Get more leads, build brand trust..." />
                   </div>
                 </div>
 
@@ -163,10 +190,10 @@ export function QuoteModal() {
               <div className="bg-[#0a0a0a]/90 backdrop-blur-md border-t border-white/5 p-6 z-10 shrink-0">
                 <button
                   onClick={handleWhatsAppSubmit}
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-4 text-base font-bold text-white shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] active:scale-[0.98] transition-all"
+                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-orange-600 px-6 py-4 text-base font-bold text-white shadow-[0_0_20px_rgba(249,115,22,0.3)] hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] active:scale-[0.98] transition-all"
                 >
                   <WhatsappLogo weight="fill" size={24} />
-                  Send to WhatsApp
+                  Send Inquiry via WhatsApp
                 </button>
                 <p className="text-[10px] text-center text-text-muted mt-3">
                   This will format your request and open WhatsApp on your device.
