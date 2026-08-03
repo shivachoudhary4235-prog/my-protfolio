@@ -70,7 +70,7 @@ export function ChatBot() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 p-4 rounded-full bg-primary text-white shadow-lg shadow-primary/20 hover:scale-110 transition-transform z-50 ${isOpen ? 'hidden' : 'flex'}`}
+        className={`fixed bottom-24 right-6 p-4 rounded-full bg-primary text-white shadow-lg shadow-primary/20 hover:scale-110 transition-transform z-50 ${isOpen ? 'hidden' : 'flex'}`}
       >
         <MessageSquare className="w-6 h-6" />
       </button>
@@ -82,7 +82,7 @@ export function ChatBot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-6 right-6 w-[calc(100%-3rem)] max-w-[380px] h-[550px] max-h-[80vh] bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden z-50"
+            className="fixed bottom-24 right-6 w-[calc(100%-3rem)] max-w-[380px] h-[550px] max-h-[80vh] bg-[#0A0A0A]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden z-50"
           >
             {/* Header */}
             <div className="p-4 border-b border-white/10 bg-white/5 flex items-center justify-between">
